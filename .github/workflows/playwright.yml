@@ -16,13 +16,12 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
-          python-version: '3.12'   # use stable version supported by Playwright
+          python-version: '3.12'   # stable version supported by Playwright
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          # pip install -r requirements.txt
-          pip install playwright    # ensure Playwright package is installed
+          pip install -r requirements.txt   # playwright should be listed here
 
       - name: Ensure browsers are installed
         run: python -m playwright install --with-deps
