@@ -16,8 +16,9 @@ jobs:
         python-version: '3.12'
     - name: Install dependencies
       run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential libffi-dev python3-dev libasound2t64
         python -m pip install --upgrade pip
-        apt-get install
         pip install -r requirements.txt
     - name: Ensure browsers are installed
       run: python -m playwright install --with-deps
